@@ -7,7 +7,7 @@ const UserProfile = ({avatar, name, tag, url, location, stats}) => {
             <div>
                 <img src={avatar} alt="User avatar" />
                 <p>{name}</p>
-                <a href={url}>
+                <a href={url} target="_blank" rel="noreferrer">
                 <p>@{tag}</p>
                 </a>
                 <p>{location}</p>
