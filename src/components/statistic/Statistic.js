@@ -1,24 +1,28 @@
 import PropTypes from "prop-types";
 
 
-const color = item => {
-    const colorArr = ['#E74C3C', '#8E44AD', '#3498DB', '#27AE60', '#F39C12'];
-    return `${colorArr[Number(item.id.replace(/[^0-9]/g, ''))% 5]}`;
-};
+function randomColor() {
+    const rgbNum = () => Math.floor(Math.random() * 256);
+    const r = rgbNum();
+    const g = rgbNum();
+    const b = rgbNum();
+  
+    return `rgb(${r},${g},${b})`;
+  }
 
 const Statistic = ({title, stats}) => {
     return (
         <section>
             <h2>{title}</h2>
             <ul>
-                {stats.map(item => (
+                {stats.map(({label, percentage, id}) => (
                     <li
-                    key={item.id}
+                    key={id}
                     // class={styles.item}
-                    style={{backgroundColor: color(item)}}
+                    style={{backgroundColor: randomColor() }}
                     >
-                        <span>{stats.label}</span>
-                        <span>{stats.percentage}</span>
+                        <span>{label}</span>
+                        <span>{percentage}%</span>
                     </li>
                 ))}
             </ul>
