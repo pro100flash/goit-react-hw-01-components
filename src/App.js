@@ -16,7 +16,6 @@ function App() {
             />
 
             <Statistic title="Upload stats" stats={statisticalData} />
-            <Statistic stats={statisticalData} />
         </div>
     );
 };
