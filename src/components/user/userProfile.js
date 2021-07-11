@@ -1,13 +1,15 @@
 // import styles from "./userProfile.module.css";
 import PropTypes from "prop-types";
 
-const UserProfile = ({avatar, name, tag, location, stats}) => {
+const UserProfile = ({avatar, name, tag, url, location, stats}) => {
     return (
         <div>
             <div>
                 <img src={avatar} alt="User avatar" />
                 <p>{name}</p>
+                <a href={url}>
                 <p>@{tag}</p>
+                </a>
                 <p>{location}</p>
             </div>
             <ul>
@@ -32,6 +34,7 @@ UserProfile.propTypes = {
     avatar: PropTypes.string,
     name: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     stats: PropTypes.object.isRequired,
 };
