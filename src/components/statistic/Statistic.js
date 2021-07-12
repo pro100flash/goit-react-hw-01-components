@@ -13,7 +13,7 @@ function randomColor() {
 const Statistic = ({ title, stats }) => {
   return (
     <section className={styles.statistics}>
-      <h2 style={{ backgroundColor: randomColor() }} className={styles.title}>
+      <h2 style={{ color: randomColor() }} className={styles.title}>
         {title}
       </h2>
       <ul className={styles.statList}>
