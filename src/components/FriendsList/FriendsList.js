@@ -1,47 +1,34 @@
 import styles from "./Friends.list.module.css";
 import PropTypes from "prop-types";
+import FriendsListItem from "./FriendsListItem";
 
-function friendOnline(status) {
-  if (status) {
-    return "#21db21";
-  } else {
-    return "#d40606";
-  }
-}
+// function friendOnline(status) {
+//   if (status) {
+//     return "#21db21";
+//   } else {
+//     return "#d40606";
+//   }
+// }
 
 const FriendsList = ({ friends }) => {
   return (
     <div className={styles.friends}>
       <ul className={styles.friendlist}>
         {friends.map((friend) => (
-          <li className={styles.item} key={friend.id}>
-            <span
-              className={styles.status}
-              style={{ color: friendOnline(friend.isOnline) }}
-            >
-              {" "}
-              ●
-            </span>
-            <img
-              className={styles.avatar}
-              src={friend.avatar}
-              alt={friend.name}
-              width="48"
-            />
-
-            <p className={styles.name}>{friend.name}</p>
-          </li>
+          <FriendsListItem
+            avatar={friend.avatar}
+            name={friend.name}
+            isOnline={friend.isOnline}
+            key={friend.id.toString()}
+          />
         ))}
       </ul>
     </div>
   );
 };
 
-FriendsList.prototypes = {
-  avatar: PropTypes.string,
-  name: PropTypes.string,
-  isOnline: PropTypes.bool,
-  id: PropTypes.string.isequired,
+FriendsList.propTypes = {
+  friends: PropTypes.array.isRequired,
 };
 
 export default FriendsList;
