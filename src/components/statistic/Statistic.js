@@ -13,18 +13,18 @@ function randomColor() {
 const Statistic = ({ title, stats }) => {
   return (
     <section className={styles.statistics}>
-      <h2 style={{ backgroundColor: randomColor() }} class={styles.title}>
+      <h2 style={{ backgroundColor: randomColor() }} className={styles.title}>
         {title}
       </h2>
-      <ul class={styles.statList}>
+      <ul className={styles.statList}>
         {stats.map(({ label, percentage, id }) => (
           <li
             key={id}
-            class={styles.item}
+            className={styles.item}
             style={{ backgroundColor: randomColor() }}
           >
-            <span class={styles.label}>{label}</span>
-            <span class={styles.percentage}>{percentage}%</span>
+            <span className={styles.label}>{label}</span>
+            <span className={styles.percentage}>{percentage}%</span>
           </li>
         ))}
       </ul>

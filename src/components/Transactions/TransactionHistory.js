@@ -8,21 +8,23 @@ function upperFirstLatter(string) {
 
 const TransactionHistory = ({ items }) => {
   return (
-    <div class={styles.transTable}>
-      <table class="transaction-history">
-        <thead class={styles.table}>
+    <div className={styles.transTable}>
+      <table className="transaction-history">
+        <thead className={styles.table}>
           <tr>
             <th>Type</th>
             <th>Amount</th>
             <th>Currency</th>
           </tr>
         </thead>
-        <tbody class={styles.tableBody}>
+        <tbody className={styles.tableBody}>
           {items.map((item) => (
             <tr key={item.id}>
-              <td class={styles.tableData}>{upperFirstLatter(item.type)}</td>
-              <td class={styles.tableData}>{item.amount}</td>
-              <td class={styles.tableData}>{item.currency}</td>
+              <td className={styles.tableData}>
+                {upperFirstLatter(item.type)}
+              </td>
+              <td className={styles.tableData}>{item.amount}</td>
+              <td className={styles.tableData}>{item.currency}</td>
             </tr>
           ))}
         </tbody>

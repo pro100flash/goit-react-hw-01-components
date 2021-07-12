@@ -1,4 +1,4 @@
-import UserProfile from "./components/User/UserProfile";
+import Profile from "./components/Profile/Profile";
 import Statistic from "./components/Statistic/Statistic";
 import FriendsList from "./components/FriendsList/FriendsList";
 import TransactionHistory from "./components/Transactions/TransactionHistory";
@@ -11,7 +11,7 @@ import transactions from "./data/transactions.json";
 function App() {
   return (
     <div>
-      <UserProfile
+      <Profile
         avatar={user.avatar}
         name={user.name}
         tag={user.tag}

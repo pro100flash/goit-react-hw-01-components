@@ -11,25 +11,25 @@ function friendOnline(status) {
 
 const FriendsList = ({ friends }) => {
   return (
-    <div class={styles.friends}>
-      <ul class={styles.friendlist}>
+    <div className={styles.friends}>
+      <ul className={styles.friendlist}>
         {friends.map((friend) => (
-          <li class={styles.item} key={friend.id}>
+          <li className={styles.item} key={friend.id}>
             <span
-              class={styles.status}
+              className={styles.status}
               style={{ color: friendOnline(friend.isOnline) }}
             >
               {" "}
               ●
             </span>
             <img
-              class={styles.avatar}
+              className={styles.avatar}
               src={friend.avatar}
               alt={friend.name}
               width="48"
             />
 
-            <p class={styles.name}>{friend.name}</p>
+            <p className={styles.name}>{friend.name}</p>
           </li>
         ))}
       </ul>
