@@ -2,14 +2,6 @@ import styles from "./Friends.list.module.css";
 import PropTypes from "prop-types";
 import FriendsListItem from "./FriendsListItem";
 
-// function friendOnline(status) {
-//   if (status) {
-//     return "#21db21";
-//   } else {
-//     return "#d40606";
-//   }
-// }
-
 const FriendsList = ({ friends }) => {
   return (
     <div className={styles.friends}>
